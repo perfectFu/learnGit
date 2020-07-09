@@ -1,2 +1,2 @@
-git is good
-i am fuaoqi
+Git is a distributed version control system.
+Git is free software.
