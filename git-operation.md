@@ -33,6 +33,48 @@
 9、克隆仓库
 	git clone repo  Git支持多种协议，包括https，ssh最快
   
-10、
+10、创建合并分支
+	git branch 合并分支
+  git branch <name> 创建分支
+  git checkout <name> 或 git switch <name> 切换分支
+  git checkout -b <name> 或 git switch -c <name> 创建并切换分支
+  git merge <name> 合并某分支到当前分支
+  git branch -d <name> 删除分支
+ 
+11、解决冲突
+    当发生合并冲突时，需要我们手动解决冲突。解决冲突完成后，在提交，合并完成
+    git log --graph 查看分支合并图
+
+12、bug分支
+    git stash 保存当前未完成的工作现场
+    git stash pop 回到工作现场
+    git cherry-pick <commit> 将commit提交的修改复制到 当前分支，避免重复劳动
+   
+13、feature分支
+    开发新的功能，最好新建一个分支
+    如果要丢弃一个没有被合并过的分支，可以通过git branch -D <name>强行删除
+    
+14、多人协作流程
+    查看远程库信息，使用git remote -v；
+    本地新建的分支如果不推送到远程，对其他人就是不可见的；
+    从本地推送分支，使用git push origin branch-name，如果推送失败，先用git pull抓取远程的新提交；
+    在本地创建和远程分支对应的分支，使用git checkout -b branch-name origin/branch-name，本地和远程分支的名称最好一致；
+    建立本地分支和远程分支的关联，使用git branch --set-upstream branch-name origin/branch-name；
+    从远程抓取分支，使用git pull，如果有冲突，要先处理冲突。
+    
+15、rebase
+   
+16、标签
+    git tag <tagname>用于新建一个标签，默认为HEAD，也可以指定一个commit id；
+		git tag -a <tagname> -m "blablabla..."可以指定标签信息；
+		git tag可以查看所有标签
+    git push origin <tagname>可以推送一个本地标签；
+		git push origin --tags可以推送全部未推送过的本地标签；
+		git tag -d <tagname>可以删除一个本地标签；
+		git push origin :refs/tags/<tagname>可以删除一个远程标签
+    
+    
+    
+    
 ```
 
